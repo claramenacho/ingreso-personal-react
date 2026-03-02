@@ -1,76 +1,156 @@
 /* Centramos todo y damos fondo */
+/* --- App.css --- */
+
+/* 1. Configuraciones Globales y Fondo */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8fafc; /* Un blanco azulado muy sutil para el fondo */
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Contenedor Principal (Centrado y Espaciado) */
 .contenedor-app {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  max-width: 500px;
-  margin: 40px auto; /* Esto lo centra en la pantalla */
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espacio automático entre inputs */
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh; /* Ocupa al menos toda la altura de la pantalla */
 }
-/* Estilo para los inputs */
+
+/* 3. Título Principal */
+h1 {
+  color: #0f172a; /* Azul marino muy oscuro */
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* 4. Tarjeta del Formulario (Inputs y Botón Registrar) */
+.seccion-registro {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03); /* Sombra muy suave */
+  width: 100%;
+  max-width: 480px; /* Ancho máximo para que no se estire demasiado */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio automático entre inputs */
+  margin-bottom: 50px;
+}
+
+/* 5. Estilos para cada Input */
 .input-usuario {
-  border: 1px solid #e2e8f0;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1px solid #e2e8f0; /* Borde gris sutil */
+  border-radius: 8px;
   background-color: #fdfdfd;
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 6px;
+  box-sizing: border-box; /* Importante para que el padding no agrande el input */
+  transition: all 0.2s ease;
 }
 
 .input-usuario:focus {
+  outline: none;
   border-color: #3b82f6; /* Azul brillante al escribir */
   background-color: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); /* Efecto de halo azul */
 }
 
-/* Botón Registrar */
+.input-usuario::placeholder {
+  color: #94a3b8; /* Color gris claro para el texto de ayuda */
+}
+
+/* 6. Botón Registrar (Estilo Primario) */
 .btn-registrar {
-  display: flexbox;
-  background-color: #646cff;
+  width: 100%;
+  background-color: #0f172a; /* Azul marino oscuro */
   color: white;
-  padding: 10px 20px;
+  padding: 14px;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 20px;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
 }
 
 .btn-registrar:hover {
-  background-color: #535bf2;
+  background-color: #1e293b; /* Un tono más claro al pasar el mouse */
 }
 
-/* La Tabla */
-.tabla-registros {
-  border-radius: 8px;
-  overflow: hidden;
+.btn-registrar:active {
+  transform: translateY(1px); /* Efecto de pulsado */
+}
+
+/* 7. Contenedor para la Tabla (para responsividad horizontal) */
+.seccion-tabla {
+  width: 100%;
+  max-width: 1000px; /* Ancho máximo para la tabla */
+  overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   border: 1px solid #e2e8f0;
 }
 
-.tabla-registros th {
-  background-color: #f1f5f9; /* Gris muy clarito */
-  color: #64748b; /* Texto gris oscuro */
-  font-weight: 600;
-  text-align: left; /* Alineado a la izquierda queda más natural */
-  padding: 12px 20px;
+/* 8. Estilos de la Tabla (Minimalista) */
+.tabla-registros {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Evita que las columnas se compriman demasiado */
 }
 
+/* Encabezado de la Tabla */
+.tabla-registros th {
+  background-color: #f1f5f9; /* Gris muy claro */
+  color: #64748b; /* Texto gris intermedio */
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase; /* Mayúsculas para un look profesional */
+  letter-spacing: 0.05em;
+  text-align: left; /* Alineado a la izquierda */
+  padding: 16px 20px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Celdas del Cuerpo de la Tabla */
 .tabla-registros td {
   padding: 16px 20px;
   color: #334155;
+  font-size: 15px;
+  border-bottom: 1px solid #f1f5f9; /* Línea divisoria muy tenue */
 }
-/* Botón Eliminar */
+
+/* Fila de la Tabla (Efecto Hover) */
+.tabla-registros tbody tr:hover {
+  background-color: #fbfcfd; /* Resalta la fila al pasar el mouse */
+}
+
+/* 9. Botón Eliminar (Estilo Secundario/Peligro) */
 .btn-eliminar {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 6px 12px;
+  background-color: white;
+  color: #ef4444; /* Rojo para indicar acción de peligro */
+  border: 1px solid #fecaca;
+  padding: 8px 16px;
   border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn-eliminar:hover {
-  background-color: #ff1a1a;
+  background-color: #fef2f2; /* Fondo rojo muy claro al pasar el mouse */
+  border-color: #ef4444;
+}
+
+.btn-eliminar:active {
+  transform: translateY(1px);
 }

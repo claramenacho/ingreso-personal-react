@@ -39,6 +39,9 @@ function App () {
   return (
     <>
       <div className='contenedor-app'>
+        <h1>Registro de Personal</h1>
+      </div>
+      <div className='seccion-registro'>
         <label htmlFor="usuario">Usuario</label>
         <input className="input-usuario"onChange ={(e)=>setNombreUsuario(e.target.value)}type="text" placeholder="Escribe aqui tu nombre"value={nombreUsuario}/>
         <input className="input-usuario"onChange ={(e)=>setApellidoUsuario(e.target.value)}type="text" placeholder="Escribe aqui tu apellido"value={apellidoUsuario}/>
