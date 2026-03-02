@@ -1,28 +1,28 @@
 /* Centramos todo y damos fondo */
 .contenedor-app {
-  
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 40px auto; /* Esto lo centra en la pantalla */
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  min-height: 1000px;
-  background-color: #f0f2f5;
-  font-family: sans-serif;
-  border-radius: 20px;
+  gap: 15px; /* Espacio automático entre inputs */
 }
-
 /* Estilo para los inputs */
 .input-usuario {
-  display: flexbox;
-  padding: 10px;
-  margin: 10px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s;
+  border: 1px solid #e2e8f0;
+  background-color: #fdfdfd;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
 }
 
 .input-usuario:focus {
-  border-color: #646cff; /* Color lila clásico de React */
+  border-color: #3b82f6; /* Azul brillante al escribir */
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Botón Registrar */
@@ -44,24 +44,23 @@
 
 /* La Tabla */
 .tabla-registros {
-  width: 100%;
-  max-width: 600px;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
 }
 
 .tabla-registros th {
-  background-color: #646cff; /* Color lila para que combine */
-  color: white;
-  padding: 12px;
-  text-align: center;
-  font-size: 0.9rem;
-  text-transform: uppercase; /* Queda muy pro en mayúsculas */
+  background-color: #f1f5f9; /* Gris muy clarito */
+  color: #64748b; /* Texto gris oscuro */
+  font-weight: 600;
+  text-align: left; /* Alineado a la izquierda queda más natural */
+  padding: 12px 20px;
 }
 
+.tabla-registros td {
+  padding: 16px 20px;
+  color: #334155;
+}
 /* Botón Eliminar */
 .btn-eliminar {
   background-color: #ff4d4d;
