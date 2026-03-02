@@ -1,10 +1,10 @@
 /* Centramos todo y damos fondo */
 .contenedor-app {
-  display: flex;
+  
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  min-height: 100px;
+  min-height: 1000px;
   background-color: #f0f2f5;
   font-family: sans-serif;
   border-radius: 20px;
@@ -53,10 +53,13 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.tabla-registros td {
-  padding: 15px;
-  border-bottom: 1px solid #eee;
+.tabla-registros th {
+  background-color: #646cff; /* Color lila para que combine */
+  color: white;
+  padding: 12px;
   text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Queda muy pro en mayúsculas */
 }
 
 /* Botón Eliminar */
